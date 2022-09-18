@@ -23,43 +23,42 @@ g=json_graph.node_link_graph(facebook_graph())
 
 def LT (Graph):
     # the initial infected set is 5 % of the hole population
+    t = 0
 	ListInactiveNodes_not_tried_to_be_activated = []
 	ListActiveNodes = []
 	for each in range(len(Graph.nodes)):
 		if random.random() < 0.25 :
 			Graph.nodes[each]['state'] = "active"
+            Graph.nodes[each]['energy'] = 3
+            Graph.nodes[each]['activation_time'] = t
+            Graph.nodes[each]['delta_t'] = t - Graph.nodes[each]['activation_time']
 			ListActiveNodes.append(each)
 		else:
 			Graph.nodes[each]['state'] = "inactive"
 			ListInactiveNodes_not_tried_to_be_activated.append(each)
 			#print(Graph.nodes[each]["teta"])
 	while ListInactiveNodes_not_tried_to_be_activated:
-		pass
-		for each in ListInactiveNodes_not_tried_to_be_activated:
-			if Graph.nodes[each]['tried_to_be_infected'] == "true":
-				continue
-			else:
-				Graph.nodes[each]['tried_to_be_infected'] = "true"
+        for each in ListInactiveNodes_not_tried_to_be_activated:
+            if Graph.nodes[each]['tried_to_be_infected'] == "true":
+                continue
+            else:
+                Graph.nodes[each]['tried_to_be_infected'] = "true"
 
 				sum_bi = 0
 				for neighbor in Graph.nodes[each]['neighbors'] :
 					if Graph.nodes[neighbor]['state'] == "active" and Graph.nodes[each]['state'] == "inactive" :
-						sum_bi += (1/(Graph.nodes[neighbor]['degree'])) # + Graph.nodes[each]['degree']
+						sum_bi += (1/(Graph.nodes[neighbor]['degree']))
 
 				if sum_bi > Graph.nodes[each]['teta'] :
 					Graph.nodes[each]['state'] == "active"
+                    Graph.nodes[each]['energy'] = 3
+                    Graph.nodes[each]['activation_time'] = t
+                    Graph.nodes[each]['delta_t'] = t - Graph.nodes[each]['activation_time']
 					ListActiveNodes.append(each)
 				ListInactiveNodes_not_tried_to_be_activated.remove(each)
 
 			print("element inactive and not tried to be activated: ", len(ListInactiveNodes_not_tried_to_be_activated))
 			print("element active: ", len(ListActiveNodes))
-
-
-
-
-
-
-
 
 
 if __name__ == '__main__':
