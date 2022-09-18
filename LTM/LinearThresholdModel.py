@@ -15,7 +15,7 @@ def facebook_graph():
 def graphe_TO_json(g):
     						#(1/g.degree[i])
     data =  json_graph.node_link_data(g,{"link": "links", "source": "source", "target": "target","weight":"weight"})
-    data['nodes'] = [ {"id": i, "Infetime":0,"degree":g.degree[i], "teta": (1/g.degree[i]), "tried_to_be_infected":"false", "neighbors":[n for n in g.neighbors(i)]} for i in range(len(data['nodes'])) ]
+    data['nodes'] = [ {"id": i, "Infetime":0,"delta_t":0,"energy":0,"activation_time":0,"degree":g.degree[i], "teta": (1/g.degree[i]), "tried_to_be_infected":"false", "neighbors":[n for n in g.neighbors(i)]} for i in range(len(data['nodes'])) ]
     data['links'] = [ {"source":u,"target":v, "weight":(g.degree[u]+g.degree[v])/2} for u,v in g.edges ]
     return data
 
