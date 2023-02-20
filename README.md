@@ -1,3 +1,3 @@
-# Twitter Rumor Detection Using Entropy
+# Twitter Rumor and Rumor Source Detection 
 
 
