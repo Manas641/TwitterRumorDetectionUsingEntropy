@@ -10,7 +10,7 @@ more attention to restrain the spread of rumors and reduce their influence. It
 is becoming increasingly important in today’s age of social media and online
 communication where false information or rumors can spread rapidly and
 have significant consequences ranging from minor misinformation to major
-public panic or damage to reputation.In this project, we deal with the identification of rumors and the source of rumors in snapshots of the social network
+public panic or damage to reputation.In this project, we deal with the identification of rumors and the source of rumors in snapshots of the social network
 Twitter. The subgraphs obtained from Twitter have an average of 45 nodes
 and 145 edges and represent smaller interaction networks. We only deal with
 nodes that are actively interacting and not the passive nodes which could be
