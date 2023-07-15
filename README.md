@@ -5,7 +5,7 @@ and voice clips. Information spreads rapidly through social networks, but the
 authenticity of the information is of significant concern. Prior verification for
 authenticity is not done as the information propagates through the networks,
 and there are higher chances for the information to be false or misleading.
-Such incorrect information is termed Rumors. Identifying rumors has gained
+Such incorrect information is termed Rumor. Identifying rumors has gained
 more attention to restrain the spread of rumors and reduce their influence. It
 is becoming increasingly important in today’s age of social media and online
 communication where false information or rumors can spread rapidly and
